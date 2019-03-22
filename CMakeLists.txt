@@ -372,6 +372,16 @@ add_executable(${TARGET_NAME}
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+target_include_directories(${TARGET_NAME}
+  PUBLIC
+  ${FFMPEG_avutil_INCLUDE_DIRS}
+  ${FFMPEG_avcodec_INCLUDE_DIRS}
+  ${FFMPEG_avformat_INCLUDE_DIRS}
+  ${FFMPEG_avfilter_INCLUDE_DIRS}
+  ${FFMPEG_swscale_INCLUDE_DIRS}
+  ${FFMPEG_swresample_INCLUDE_DIRS}
+)
+
 target_link_libraries(${TARGET_NAME}
   OpenGL::GL
   Qt5::Core
